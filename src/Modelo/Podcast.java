@@ -39,21 +39,22 @@ public class Podcast extends ContenidoAudiovisual{
     }
     
     @Override
-    public void mostrarDetalles(){
-        System.out.println("Detalles del Podcast:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Anfitrión: " + this.anfitrion);
-        System.out.println("Numero de episodios: " + this.numeroEpisodio);
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nDetalles del podcast:");
+        sb.append(super.toString());
+        
+        sb.append("\nAnfitrión: ").append(this.anfitrion);
+        sb.append("\nNumero de episodios: ").append(this.numeroEpisodio);
+        sb.append("\nInvestigadores: ");
+        
         if (investigadores.isEmpty()){
-            System.out.println("Investigadores: Aun no se ha agregado ninguno");
-        }else{
-            System.out.println("Investigadores:");
-            for(int i = 0; i<investigadores.size();i++){
-                System.out.println(investigadores.get(i).getNombre());
-            }
+            sb.append("Aun no se ha agregado ninguno");
         }
-        System.out.println();
+        for(int i = 0; i<investigadores.size();i++){
+            sb.append("\n").append(investigadores.get(i).getNombre());
+        }
+        
+        return sb.toString();
     }
 }

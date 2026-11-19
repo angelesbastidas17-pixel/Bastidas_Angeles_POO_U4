@@ -13,13 +13,13 @@ public class SerieDeTV extends ContenidoAudiovisual {
     }
     
     @Override
-    public void mostrarDetalles() {
-        System.out.println("Detalles de la serie de tv:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Temporada: " + this.temporada.getNumeroTemp());
-        System.out.println();
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nDetalles de la serie de tv:");
+        sb.append(super.toString());
+
+        sb.append("\nTemporada: ").append(this.temporada.getNumeroTemp());
+        
+        return sb.toString();
     }
 }

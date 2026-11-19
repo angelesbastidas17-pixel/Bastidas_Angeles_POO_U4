@@ -1,13 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package controlador;
+
+import Modelo.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("Hello from Eclipse!");
+        ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[5];
+        
+        Pelicula pelicula1 = new Pelicula("Avatar", 125, "Accion", "20th Century Studios");
+        Actor actor1 = new Actor("Sam Worthington");
+        Actor actor2 = new Actor("Zoe Saldaña");
+        pelicula1.agregarActor(actor1);
+        pelicula1.agregarActor(actor2);
+        contenidos[0] = pelicula1;
+        
+        contenidos[1] = new SerieDeTV("Game of Thrones", 60, "Fantasy", 8);
+        
+        Investigador investigador1 = new Investigador("Carl Sagan");
+        contenidos[2] = new Documental("Cosmos", 45, "Science", "Astronomy",investigador1);
+        
+        Podcast podcast1 = new Podcast("The Wild Project #11", 213, "Science", "Jordi Wild", 11);
+        Investigador investigador2 = new Investigador("Javier Santaolalla");
+        podcast1.agregarInvestigador(investigador2);
+        contenidos[3] = podcast1;
+        
+        contenidos[4] = new VideoMusical("Si Antes Te Hubiera Conocido",3,"Regueton","Karol G", "Coke Studio");
+        
+        // Mostrar los detalles de cada contenido audiovisual
+        for (ContenidoAudiovisual contenido : contenidos) {
+            System.out.println(contenido.toString());
+        }
     }
     
 }

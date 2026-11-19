@@ -27,14 +27,15 @@ public class VideoMusical extends ContenidoAudiovisual{
     }
     
     @Override
-    public void mostrarDetalles(){
-        System.out.println("Detalles del video musical: ");
-        System.out.println("ID: "+ getId());
-        System.out.println("Título: "+getTitulo());
-        System.out.println("Duración en minutos: "+getDuracionEnMinutos());
-        System.out.println("Género: "+getGenero());
-        System.out.println("Nombre del artista: " + this.nombreArtista);
-        System.out.println("Discográfica: "+this.discografica);
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nDetalles del video musical:");
+        sb.append(super.toString());
+        
+        sb.append("\nNombre del artista: ").append(this.nombreArtista);
+        sb.append("\nDiscográfica: ").append(this.discografica);
+        
+        return sb.toString();
     }
     
 }

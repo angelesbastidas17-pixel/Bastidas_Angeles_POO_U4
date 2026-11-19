@@ -34,21 +34,21 @@ public class Pelicula extends ContenidoAudiovisual {
     }
     
     @Override
-    public void mostrarDetalles() {
-        System.out.println("Detalles de la película:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Estudio: " + estudio);
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nDetalles de la película:");
+        sb.append(super.toString()); //trae el resultado del metodo de la superclase que tiene los 4 primeros atributos heredados.
+        
+        sb.append("\nEstudio: ").append(estudio);
+        sb.append("\nActores: ");
+        
         if (actores.isEmpty()){
-            System.out.println("Actores: Aun no se ha agregado ninguno");
-        }else{
-            System.out.println("Actores:");
-            for(int i = 0; i<actores.size();i++){
-                System.out.println(actores.get(i).getNombre());
-            }
+            sb.append("Aun no se ha agregado ninguno");
         }
-        System.out.println();
+        for(int i = 0; i<actores.size();i++){
+            sb.append("\n").append(actores.get(i).getNombre());
+        }
+        
+        return sb.toString();
     }
 }

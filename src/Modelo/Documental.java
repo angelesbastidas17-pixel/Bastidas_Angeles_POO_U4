@@ -23,14 +23,14 @@ public class Documental extends ContenidoAudiovisual {
     }
     
     @Override
-    public void mostrarDetalles() {
-        System.out.println("Detalles del documental:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Tema: " + this.tema);
-        System.out.println("Investigador: "+investigador.getNombre());
-        System.out.println();
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nDetalles del documental:");
+        sb.append(super.toString());
+        
+        sb.append("\nTema: ").append(this.tema);
+        sb.append("\nInvestigador: ").append(investigador.getNombre());
+        
+        return sb.toString();
     }
 }
