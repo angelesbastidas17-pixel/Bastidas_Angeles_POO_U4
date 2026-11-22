@@ -20,6 +20,12 @@ public class ControladorCA {
 //        }
 //    }
     
+    //**************************************************************************************************
+    //--------------------------------------------------------------------------------------------------
+    // Solo cargar 1 tipo, poner ejemplo autollenado para ver diferencia al guardar el CSV
+    //--------------------------------------------------------------------------------------------------
+    //**************************************************************************************************
+    
     public ArrayList<ContenidoAudiovisual> llenarClasesModeloConCsv(){
         ArrayList<ContenidoAudiovisual> listaContenidos = new ArrayList<>();
         

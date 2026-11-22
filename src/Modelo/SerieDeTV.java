@@ -22,4 +22,9 @@ public class SerieDeTV extends ContenidoAudiovisual {
         
         return sb.toString();
     }
+    
+    @Override
+    public String convertirACsv(){
+        return "SERIE," + super.convertirACsv() + "," + this.temporada.getNumeroTemp()+",";
+    }
 }

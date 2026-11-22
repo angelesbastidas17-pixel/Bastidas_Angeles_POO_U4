@@ -33,4 +33,13 @@ public class Documental extends ContenidoAudiovisual {
         
         return sb.toString();
     }
+    
+    @Override
+    public String convertirACsv(){
+        String nombreInv = "";
+        if (investigador != null){
+            nombreInv = investigador.getNombre();
+        }
+        return "DOCUMENTAL,"+super.convertirACsv()+","+tema+","+nombreInv;
+    }
 }

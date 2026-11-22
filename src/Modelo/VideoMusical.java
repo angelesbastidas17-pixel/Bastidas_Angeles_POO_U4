@@ -38,4 +38,9 @@ public class VideoMusical extends ContenidoAudiovisual{
         return sb.toString();
     }
     
+    @Override
+    public String convertirACsv(){
+        return "VIDEOMUSICAL," + super.convertirACsv() + "," + nombreArtista + "," + discografica;
+    }
+    
 }

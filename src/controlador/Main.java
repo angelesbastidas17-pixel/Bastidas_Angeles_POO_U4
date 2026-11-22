@@ -48,8 +48,12 @@ public class Main {
 //        }
 
 
-         ControladorCA con = new ControladorCA();
-         System.out.println(con.llenarClasesModeloConCsv());
+         ControladorCA controlador = new ControladorCA();
+         System.out.println(controlador.llenarClasesModeloConCsv());
+//         ArrayList<ContenidoAudiovisual> contenidos = controlador.llenarClasesModeloConCsv();
+//         for(ContenidoAudiovisual contenido: contenidos){
+//             System.out.println(contenido.toString());
+//         }
     }
     
 }

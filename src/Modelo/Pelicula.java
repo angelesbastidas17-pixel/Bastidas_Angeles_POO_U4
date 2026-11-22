@@ -45,10 +45,19 @@ public class Pelicula extends ContenidoAudiovisual {
         if (actores.isEmpty()){
             sb.append("Aun no se ha agregado ninguno");
         }
-        for(int i = 0; i<actores.size();i++){
-            sb.append("\n").append(actores.get(i).getNombre());
+        for(Actor actor : actores){
+            sb.append("\n").append(actor.getNombre());
         }
         
         return sb.toString();
+    }
+    
+    @Override
+    public String convertirACsv(){
+        ArrayList<String> nombres = new ArrayList<>();
+        for(Actor actor : actores){
+            nombres.add(actor.getNombre());
+        }
+        return "PELICULA," + super.convertirACsv() + "," + estudio + "," + String.join("|",nombres);
     }
 }

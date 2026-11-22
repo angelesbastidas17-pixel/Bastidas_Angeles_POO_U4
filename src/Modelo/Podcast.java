@@ -51,10 +51,19 @@ public class Podcast extends ContenidoAudiovisual{
         if (investigadores.isEmpty()){
             sb.append("Aun no se ha agregado ninguno");
         }
-        for(int i = 0; i<investigadores.size();i++){
-            sb.append("\n").append(investigadores.get(i).getNombre());
+        for(Investigador investigador: investigadores){
+            sb.append("\n").append(investigador.getNombre());
         }
         
         return sb.toString();
+    }
+    
+    @Override
+    public String convertirACsv(){
+        ArrayList<String> nombres = new ArrayList<>();
+        for(Investigador investigador: investigadores){
+            nombres.add(investigador.getNombre());
+        }
+        return "PODCAST," + super.convertirACsv() + "," + anfitrion + ";" + numeroEpisodio + "," + String.join("|",nombres);
     }
 }

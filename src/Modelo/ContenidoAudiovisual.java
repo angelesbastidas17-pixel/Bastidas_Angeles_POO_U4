@@ -1,6 +1,8 @@
 package Modelo;
 
-public abstract class ContenidoAudiovisual {
+import ManejoArchivosCSV.*;
+
+public abstract class ContenidoAudiovisual implements ConvertibleCSV{
     private static int contar = 0;
     private String titulo;
     private int duracionEnMinutos;
@@ -45,7 +47,12 @@ public abstract class ContenidoAudiovisual {
     
     @Override
     public String toString(){
-        return "\nID: " + getId()+"\nTítulo: " + getTitulo()+
-                "\nDuración en minutos: " + getDuracionEnMinutos()+"\nGénero: " + getGenero();
+        return "\nID: " + id +"\nTítulo: " + titulo+
+                "\nDuración en minutos: " + duracionEnMinutos+"\nGénero: " + genero;
+    }
+    
+    @Override
+    public String convertirACsv(){
+        return titulo+"," + duracionEnMinutos+"\nGénero: " + genero;
     }
 }
