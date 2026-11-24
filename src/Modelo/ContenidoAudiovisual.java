@@ -1,6 +1,6 @@
 package Modelo;
 
-import ManejoArchivosCSV.*;
+import archivo.ConvertibleCSV;
 
 public abstract class ContenidoAudiovisual implements ConvertibleCSV{
     private static int contar = 0;
@@ -53,6 +53,6 @@ public abstract class ContenidoAudiovisual implements ConvertibleCSV{
     
     @Override
     public String convertirACsv(){
-        return titulo+"," + duracionEnMinutos+"\nGénero: " + genero;
+        return titulo+"," + duracionEnMinutos+"," + genero;
     }
 }
