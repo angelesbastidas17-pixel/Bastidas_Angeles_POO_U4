@@ -69,7 +69,7 @@ public class ArchivosCSV {
             // lectura del archivo csv
             ArrayList<String[]> contenidoDelCSV = leerCSV();
             
-//            contenidos.clear();
+            contenidos.clear();
             
             for(String[] linea : contenidoDelCSV){
                 String tipo = linea[0];
