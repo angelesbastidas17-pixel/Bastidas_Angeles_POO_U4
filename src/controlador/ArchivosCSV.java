@@ -18,12 +18,29 @@ public class ArchivosCSV {
     
     String rutaArchivoAntes = "./contenido.csv";
     String rutaArchivoDespues = "./contenido_actualizado.csv";
+
+    public String getRutaArchivoAntes() {
+        return rutaArchivoAntes;
+    }
+
+    public String getRutaArchivoDespues() {
+        return rutaArchivoDespues;
+    }
+
+    // se necesitan para las pruebas 
+    public void setRutaArchivoAntes(String rutaArchivoAntes) {
+        this.rutaArchivoAntes = rutaArchivoAntes;
+    }
+
+    public void setRutaArchivoDespues(String rutaArchivoDespues) {
+        this.rutaArchivoDespues = rutaArchivoDespues;
+    }
     
     public ArrayList<String[]> leerCSV() throws IOException{
         try(BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(rutaArchivoAntes), StandardCharsets.UTF_8))){
             
             String linea = br.readLine();
-            if(linea == null) throw new IOException ("El archivo CSV está vacío");
+            if(linea == null) throw new IOException ("El archivo CSV esta vacio");
             
             ArrayList<String[]> lineasCSV = new ArrayList<>();
             while((linea = br.readLine()) != null){

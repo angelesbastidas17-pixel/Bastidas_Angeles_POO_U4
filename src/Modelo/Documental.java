@@ -29,7 +29,8 @@ public class Documental extends ContenidoAudiovisual {
         sb.append(super.toString());
         
         sb.append("\nTema: ").append(this.tema);
-        sb.append("\nInvestigador: ").append(investigador.getNombre());
+        String nombreInv = (investigador == null) ? "Sin investigador asignado" : investigador.getNombre();
+        sb.append("\nInvestigador: ").append(nombreInv);
         
         return sb.toString();
     }
