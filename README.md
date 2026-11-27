@@ -39,6 +39,10 @@ Bastidas_Angeles_POO_U4/
     └── PodcastTest, VistaCATest
 ```
 
+## Diagrama UML
+<img width="4504" height="3828" alt="src" src="https://github.com/user-attachments/assets/bb3ac5e2-65c9-459b-aa9a-d570c03ded67" />
+
+
 ## Modelo de clases
 
 `ContenidoAudiovisual` es una clase abstracta que implementa `ConvertibleCSV` y guarda los datos comunes (id, título, duración y género). Cada tipo de contenido la extiende y agrega sus atributos propios:
